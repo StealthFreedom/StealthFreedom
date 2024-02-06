@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:gnome="http://api.gnome.org/doap-extensions#"
+         xmlns="http://usefulinc.com/ns/doap#">
+
+  <name xml:lang="en">Stealth Freedom</name>
+  <shortdesc xml:lang="en">
+    Get untraceable access to the Internet without censorship
+  </shortdesc>
+  <description xml:lang="en">
+    Stealth Freedom helps you bypass government censorship by using the VLESS proxy protocol. VLESS masks your network activity as a regular web browser connection, so the government thinks you are just browsing the web. Under the hood, StealthFreedom uses two podman containers: https://github.com/StealthFreedom/crosssection and https://github.com/StealthFreedom/sing-box.
+
+    Features:
+    - Support for VLESS (with XTLS-Reality) connection links
+
+    To run Stealth Freedom, your system must have:
+    - systemd
+    - CGroupsV2 (unified_cgroup_hierarchy)
+    - podman 4.8.0 or newer
+  </description>
+
+  <homepage rdf:resource="https://github.com/StealthFreedom/StealthFreedom" />
+  <bug-database rdf:resource="https://github.com/StealthFreedom/StealthFreedom/issues" />
+  <download-page rdf:resource="https://flathub.org/apps/io.github.StealthFreedom.StealthFreedom" />
+
+  <programming-language>Rust</programming-language>
+  <platform>GTK 4</platform>
+  <platform>Libadwaita</platform>
+
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>ewokthepreparer</foaf:name>
+      <foaf:mbox rdf:resource="mailto:ewokthepreparer@proton.me" />
+      <foaf:account>
+        <foaf:OnlineAccount>
+          <foaf:accountServiceHomepage rdf:resource="https://github.com" />
+          <foaf:accountName>ewokthepreparer</foaf:accountName>
+        </foaf:OnlineAccount>
+      </foaf:account>
+    </foaf:Person>
+  </maintainer>
+</Project>

@@ -1,0 +1,132 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the stealth_freedom package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: stealth_freedom\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-06 10:01+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Translators: Do NOT translate or transliterate app name!
+#: data/io.github.StealthFreedom.StealthFreedom.desktop.in.in:4
+#: data/io.github.StealthFreedom.StealthFreedom.metainfo.xml.in.in:6
+msgid "Stealth Freedom"
+msgstr ""
+
+#: data/io.github.StealthFreedom.StealthFreedom.desktop.in.in:5
+#: data/io.github.StealthFreedom.StealthFreedom.metainfo.xml.in.in:7
+msgid "Get untraceable access to the Internet without censorship"
+msgstr ""
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/io.github.StealthFreedom.StealthFreedom.desktop.in.in:11
+msgid "VPN;proxy;privacy;censorship;xray;sing-box;vless;"
+msgstr ""
+
+#: data/io.github.StealthFreedom.StealthFreedom.gschema.xml.in:6
+msgid "Window width"
+msgstr ""
+
+#: data/io.github.StealthFreedom.StealthFreedom.gschema.xml.in:10
+msgid "Window height"
+msgstr ""
+
+#: data/io.github.StealthFreedom.StealthFreedom.gschema.xml.in:14
+msgid "Window maximized state"
+msgstr ""
+
+#: data/io.github.StealthFreedom.StealthFreedom.metainfo.xml.in.in:9
+msgid ""
+"Stealth Freedom helps you bypass government censorship by using the VLESS "
+"proxy protocol. VLESS masks your network activity as a regular web browser "
+"connection, so the government thinks you are just browsing the web."
+msgstr ""
+
+#: data/io.github.StealthFreedom.StealthFreedom.metainfo.xml.in.in:10
+msgid "Features:"
+msgstr ""
+
+#: data/io.github.StealthFreedom.StealthFreedom.metainfo.xml.in.in:12
+msgid "Support for VLESS (with XTLS-Reality) connection links"
+msgstr ""
+
+#: data/io.github.StealthFreedom.StealthFreedom.metainfo.xml.in.in:14
+msgid "To run Stealth Freedom, your system must have:"
+msgstr ""
+
+#: data/io.github.StealthFreedom.StealthFreedom.metainfo.xml.in.in:16
+msgid "systemd"
+msgstr ""
+
+#. Translators: Do NOT translate this string! It's a term.
+#: data/io.github.StealthFreedom.StealthFreedom.metainfo.xml.in.in:18
+msgid "CGroupsV2 (unified_cgroup_hierarchy)"
+msgstr ""
+
+#: data/io.github.StealthFreedom.StealthFreedom.metainfo.xml.in.in:19
+msgid "podman 4.8.0 or newer"
+msgstr ""
+
+#: data/io.github.StealthFreedom.StealthFreedom.metainfo.xml.in.in:38
+msgid "Main window"
+msgstr ""
+
+#: data/io.github.StealthFreedom.StealthFreedom.metainfo.xml.in.in:56
+msgid "First release!"
+msgstr ""
+
+#: data/resources/ui/shortcuts.blp:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr ""
+
+#: data/resources/ui/shortcuts.blp:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr ""
+
+#: data/resources/ui/shortcuts.blp:19
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr ""
+
+#: data/resources/ui/window.blp:7
+msgid "_Preferences"
+msgstr ""
+
+#: data/resources/ui/window.blp:12
+msgid "_Keyboard Shortcuts"
+msgstr ""
+
+#: data/resources/ui/window.blp:17
+msgid "_About StealthFreedom"
+msgstr ""
+
+#: data/resources/ui/window.blp:34 src/application.rs:116
+msgid "StealthFreedom"
+msgstr ""
+
+#: data/resources/ui/window.blp:47
+msgid "Hello world!"
+msgstr ""
+
+#. Contributors:
+#: src/application.rs:121
+msgid "ewokthepreparer"
+msgstr ""
+
+#. Translators: write your names here in this format (one name per line): "Name <email>".
+#. They will be shown in the About Dialog.
+#: src/application.rs:126
+msgid "translator-credits"
+msgstr ""

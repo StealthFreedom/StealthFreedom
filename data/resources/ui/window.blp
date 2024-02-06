@@ -1,0 +1,56 @@
+using Gtk 4.0;
+using Adw 1;
+
+menu primary_menu {
+  section {
+    item {
+      label: _("_Preferences");
+      action: "app.preferences";
+    }
+
+    item {
+      label: _("_Keyboard Shortcuts");
+      action: "win.show-help-overlay";
+    }
+
+    item {
+      label: _("_About Stealth Freedom");
+      action: "app.about";
+    }
+  }
+}
+
+template $StealthFreedomWindow : Adw.ApplicationWindow {
+  Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar headerbar {
+      [start]
+      Button add_link_button {
+        icon-name: "list-add-symbolic";
+        action-name: "win.add-link";
+      }
+
+      title-widget: Adw.WindowTitle {
+        title: _("Stealth Freedom");
+      };
+
+      [end]
+      MenuButton appmenu_button {
+        icon-name: "open-menu-symbolic";
+        menu-model: primary_menu;
+        primary: true;
+        tooltip-text: "Main Menu";
+      }
+    }
+
+    content: Label label {
+      label: _("Hello world!");
+      hexpand: true;
+      vexpand: true;
+
+      styles [
+        "title-header",
+      ]
+    };
+  }
+}

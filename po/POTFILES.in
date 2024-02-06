@@ -1,0 +1,7 @@
+# please keep this list sorted alphabetically
+data/io.github.StealthFreedom.StealthFreedom.desktop.in.in
+data/io.github.StealthFreedom.StealthFreedom.gschema.xml.in
+data/io.github.StealthFreedom.StealthFreedom.metainfo.xml.in.in
+data/resources/ui/shortcuts.blp
+data/resources/ui/window.blp
+src/application.rs
