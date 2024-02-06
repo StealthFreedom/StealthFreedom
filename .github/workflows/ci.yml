@@ -1,0 +1,71 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+env:
+  BUILD_DEPS: |
+    rustc cargo clippy rustfmt wget meson git desktop-file-utils
+    gtk4-devel libadwaita-devel
+
+jobs:
+  typos:
+    name: Typos
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check typos
+        uses: crate-ci/typos@master
+
+  rustfmt:
+    name: Rustfmt
+    runs-on: ubuntu-latest
+    container: registry.fedoraproject.org/fedora:latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: dnf install -y $BUILD_DEPS
+      - name: Generate config file
+        run: meson setup _build
+      - name: Run cargo fmt
+        run: cargo fmt --all -- --check
+
+  clippy:
+    name: Clippy
+    runs-on: ubuntu-latest
+    container: registry.fedoraproject.org/fedora:latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: dnf install -y $BUILD_DEPS
+      - name: Generate config file
+        run: meson setup _build
+      - name: Run cargo clippy
+        run: cargo clippy --all-targets --all-features
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    container: registry.fedoraproject.org/fedora:latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: dnf install -y $BUILD_DEPS
+      - name: Generate config file
+        run: meson setup _build
+      - name: Run cargo test
+        run: cargo test --all-targets --all-features
+
+  flatpak:
+    name: Flatpak
+    runs-on: ubuntu-latest
+    container:
+      image: bilelmoussaoui/flatpak-github-actions:gnome-45
+      options: --privileged
+    steps:
+      - uses: actions/checkout@v4
+      - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v6
+        with:
+          bundle: stealth_freedom.flatpak
+          manifest-path: build-aux/io.github.StealthFreedom.StealthFreedom.Devel.json
+          run-tests: true
+          cache-key: flatpak-builder-${{ github.sha }}
