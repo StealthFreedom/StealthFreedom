@@ -5,5 +5,7 @@
     <file compressed="true" alias="gtk/help-overlay.ui">ui/shortcuts.ui</file>
     <file compressed="true">ui/window.ui</file>
     <file compressed="true">style.css</file>
+    <!-- Icons: -->
+    <file preprocess="xml-stripblanks">icons/scalable/actions/speedometer-symbolic.svg</file>
   </gresource>
 </gresources>

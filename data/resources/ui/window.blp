@@ -21,6 +21,18 @@ menu primary_menu {
 }
 
 template $StealthFreedomWindow : Adw.ApplicationWindow {
+  width-request: 360;
+  height-request: 270;
+
+  Adw.Breakpoint {
+    condition ("max-width: 550sp")
+
+    setters {
+      headerbar.title-widget: null;
+      switcherbar.reveal: true;
+    }
+  }
+
   Adw.ToolbarView {
     [top]
     Adw.HeaderBar headerbar {
@@ -30,8 +42,9 @@ template $StealthFreedomWindow : Adw.ApplicationWindow {
         action-name: "win.add-link";
       }
 
-      title-widget: Adw.WindowTitle {
-        title: _("Stealth Freedom");
+      title-widget: Adw.ViewSwitcher {
+        stack: viewstack;
+        policy: wide;
       };
 
       [end]
@@ -43,14 +56,137 @@ template $StealthFreedomWindow : Adw.ApplicationWindow {
       }
     }
 
-    content: Label label {
-      label: _("Hello world!");
-      hexpand: true;
-      vexpand: true;
+    content: Adw.ViewStack viewstack {
+      Adw.ViewStackPage {
+        name: "status";
+        title: "Status";
+        icon-name: "speedometer-symbolic";
 
-      styles [
-        "title-header",
-      ]
+        child: ScrolledWindow {
+          propagate-natural-width: true;
+          propagate-natural-height: true;
+
+          Adw.Clamp {
+            maximum-size: 500;
+
+            Gtk.Box {
+              halign: fill;
+              valign: center;
+              orientation: vertical;
+              spacing: 24;
+              margin-top: 24;
+              margin-bottom: 24;
+              margin-start: 12;
+              margin-end: 12;
+
+              Button {
+                label: "Connect";
+                halign: center;
+
+                styles [
+                  "pill",
+                  "suggested-action",
+                ]
+              }
+
+              Adw.PreferencesGroup {
+                title: _("Server info");
+                halign: fill;
+
+                Adw.ActionRow {
+                  title: _("Connection Status");
+
+                  [suffix]
+                  Gtk.Label {
+                    label: "Disconnected";
+
+                    styles [
+                      "warning",
+                    ]
+                  }
+                }
+
+                Adw.ActionRow {
+                  title: _("Server Name");
+
+                  [suffix]
+                  Gtk.Label {
+                    label: "Lorem";
+                  }
+                }
+              }
+            }
+          }
+        };
+      }
+
+      Adw.ViewStackPage {
+        name: "servers";
+        title: "Servers";
+        icon-name: "network-server-symbolic";
+
+        child: ScrolledWindow {
+          propagate-natural-width: true;
+          propagate-natural-height: true;
+
+          Adw.Clamp {
+            maximum-size: 500;
+
+            Gtk.Box {
+              halign: fill;
+              valign: center;
+              orientation: vertical;
+              spacing: 24;
+              margin-top: 24;
+              margin-bottom: 24;
+              margin-start: 12;
+              margin-end: 12;
+
+              ListBox {
+                selection-mode: none;
+                halign: fill;
+
+                Adw.ActionRow {
+                  title: _("Lorem");
+
+                  [suffix]
+                  Gtk.Button {
+                    icon-name: "user-trash-symbolic";
+                    valign: center;
+
+                    styles [
+                      "destructive-action",
+                    ]
+                  }
+                }
+
+                Adw.ActionRow {
+                  title: _("Ipsum");
+
+                  [suffix]
+                  Gtk.Button {
+                    icon-name: "user-trash-symbolic";
+                    valign: center;
+
+                    styles [
+                      "destructive-action",
+                    ]
+                  }
+                }
+
+                styles [
+                  "boxed-list"
+                ]
+              }
+            }
+          }
+        };
+      }
     };
+
+    [bottom]
+    Adw.ViewSwitcherBar switcherbar {
+        stack: viewstack;
+    }
   }
 }
