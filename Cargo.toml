@@ -24,7 +24,7 @@ adw = { version = "0.6.0", package = "libadwaita", features = [
 ] }
 gettext-rs = { version = "0.7.2", features = ["gettext-system"] }
 gtk = { version = "0.8.0", package = "gtk4", features = ["gnome_45"] }
-indoc = "2.0.5"
+indoc = "2.0.6"
 itertools = "0.14.0"
 os-release-rs = "0.1.0"
 sysinfo = "0.33.1"
